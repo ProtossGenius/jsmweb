@@ -1,0 +1,25 @@
+div
+meta
+html
+body
+head
+h1
+h2
+h3
+ul
+li
+a
+span
+p
+script
+table
+tr
+td
+th
+marquee
+label
+input
+select
+ testarea
+ button
+ required

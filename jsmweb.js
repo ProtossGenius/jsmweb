@@ -2,12 +2,14 @@ var http = require('http');
 var routes = require('./web_func/routes');
 // 创建服务器
 
-var route = new routes.Route("./web", "./jspage", "./web");
+var route = new routes.Route("./web", "./jspage");
 
-http.createServer(function (request, response) {
-    if (!route.onRequest(request, response)) {
-        route.fileRequest("./web/404.html", request, response);
-    }
+route.p404 = function (request, response) {
+    route.fileRequest("./web/html/404.html", request, response);
+};
+
+http.createServer(function (request, response){
+    route.onRequest(request, response);
 }).listen(800);
 
 
